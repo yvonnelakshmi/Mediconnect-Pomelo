@@ -1,15 +1,15 @@
-<?php 
+<?php
 
-define('DVWA_WEB_PAGE_TO_ROOT', '');
-require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My App</title>
+  </head>
+  <body>
+    <h1>Welcome to MediConnect</h1>
+  </body>
+</html>
 
-dvwaPageStartup(array());
-
-$page = dvwaPageNewGrab();
-$page['title'] = 'MediConnect Portal' . $page['title_separator'] . $page['title'];
-$page['page_id'] = 'home';
-
-$page['body'] .= '
 <div style="background-color: #ffffff; font-family: Arial, sans-serif; color: #222; padding: 20px; max-width: 900px; margin: 20px auto 10px auto; box-shadow: 0 0 12px rgba(0,0,0,0.08); border-radius: 16px;">
   <div style="text-align: center;">
     <img src="images/mediconnect-logo.png" alt="MediConnect Logo" style="width: 300px; margin-top: -30px; margin-bottom: -15px;"> <!-- Raised logo -->

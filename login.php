@@ -1,17 +1,12 @@
 <?php
+
+// Show errors for debugging (optional in production)
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-define('DVWA_WEB_PAGE_TO_ROOT', '');
-require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
-
-dvwaPageStartup(array('php'));
 
 session_start();
-$page = dvwaPageNewGrab();
-$page['title'] = 'Patient Login';
-$page['page_id'] = 'login';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_text'])) {
     $text = $_POST['user_text'];
@@ -157,5 +152,22 @@ dvwaHtmlEcho($page);
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <script src="firebase-config.js"></script>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patient Login</title>
+  <link rel="stylesheet" href="style.css"> <!-- Optional -->
+</head>
+<body>
+  <div class="login-container">
+    <h2>Enter Message or JWT</h2>
+    <form method="post">
+      <input type="text" name="user_text" required>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>
 
 
